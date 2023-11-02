@@ -1,0 +1,93 @@
+---
+interface Props {
+	title: string;
+	community: string;
+  communityLogo: string;
+  postedAt: string;
+}
+
+const { title, community, communityLogo: commuinityLogo, postedAt } = Astro.props;
+---
+
+<li>
+  <a href="#">
+    <img class="logo" src={commuinityLogo} alt={community} />
+    <div class="community">
+      <span class="community-text">{community}</span>
+      <span class="bullet">•</span>
+      <span class="posted-at-text">{postedAt}</span>
+    </div>
+    <h2 class="title">{title}</h2>
+    <div class="body">
+      <slot />
+    </div>
+  </a>
+</li>
+
+<style>
+	a {
+    display: grid;
+    grid-template-areas:
+      "logo community"
+      "title title"
+      "body body";
+    grid-template-columns: min-content 1fr;
+    row-gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #242424;
+	}
+
+  .logo {
+    grid-area: logo;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+  
+  .community {
+    padding-left: 0.5rem;
+    grid-area: community;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+  }
+
+  .title {
+    grid-area: title;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .body {
+    grid-area: body;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+	.title {
+		font-size: 1.5rem;
+		font-weight: 500;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2; /* number of lines to show */
+						line-clamp: 2; 
+		-webkit-box-orient: vertical;
+	}
+
+  .bullet {
+    margin: 0 0.5rem;
+    color: #999;
+  }
+
+  .posted-at-text {
+    color: #999;
+    font-weight: 400;
+  }
+</style>

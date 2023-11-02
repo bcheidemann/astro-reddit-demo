@@ -1,0 +1,52 @@
+<div class="nav">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/">About</a>
+    </li>
+    <li>
+      <a href="/">Contact</a>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .nav {
+    padding: 1rem;
+		padding-top: calc(52px + 1rem);
+		background: #242424;
+		color: white;
+    height: 100%;
+  }
+
+  ul {
+    position: sticky;
+    top: calc(52px + 1rem);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: unset;
+    margin: 0;
+    row-gap: 1rem;
+  }
+
+  a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    border-radius: 99rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: #343434;
+    color: white;
+    transition: 0.5s;
+  }
+
+  a:hover {
+    background: rgb(44, 44, 44);
+    transform: translateX(5px);
+  }
+</style>

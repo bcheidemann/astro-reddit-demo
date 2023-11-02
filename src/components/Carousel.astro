@@ -1,0 +1,80 @@
+---
+import CarouselItem from "./CarouselItem.astro";
+
+---
+
+<div class="carousel">
+  <ul>
+    <CarouselItem
+      title="The Dawn of Space Tourism"
+      subtitle="Exploring the new frontier of commercial space travel."
+      image="https://picsum.photos/id/700/200"
+      link="#"
+    />
+    <CarouselItem
+      title="Navigating AI Ethics in Tech"
+      subtitle="Balancing innovation with ethical considerations in the AI era."
+      image="https://picsum.photos/id/600/200"
+      link="#"
+    />
+    <CarouselItem
+      title="Unearthing Ancient Civilizations"
+      subtitle="Discovering the secrets of the past through modern archaeology."
+      image="https://picsum.photos/id/400/200"
+      link="#"
+    />
+    <CarouselItem
+      title="The Rise of Vertical Farming"
+      subtitle="Transforming urban landscapes with sustainable agriculture."
+      image="https://picsum.photos/id/320/200"
+      link="#"
+    />
+    <CarouselItem
+      title="The Mindful Generation"
+      subtitle="Embracing mental wellness in a digital world."
+      image="https://picsum.photos/id/580/200"
+      link="#"
+    />
+    <CarouselItem
+      title="Music in Social Movements"
+      subtitle="The power of melodies in driving societal change."
+      image="https://picsum.photos/id/450/200"
+      link="#"
+    />
+    <CarouselItem
+      title="Mysteries of the Deep Ocean"
+      subtitle="Exploring uncharted waters and the wonders they hold."
+      image="https://picsum.photos/id/550/200"
+      link="#"
+    />
+    <CarouselItem
+      title="Inside the Cannabis Boom"
+      subtitle="Navigating the complexities of the burgeoning cannabis industry."
+      image="https://picsum.photos/id/650/200"
+      link="#"
+    />
+  </ul>
+</div>
+
+<style>
+  .carousel {
+		overflow-x: scroll;
+		display: flex;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+		column-gap: 1rem;
+
+		/* Hide scroll bars */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+  }
+
+  ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+</style>

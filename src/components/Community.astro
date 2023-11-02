@@ -1,0 +1,48 @@
+---
+interface Props {
+	name: string;
+	members: string;
+	logo: string;
+}
+
+const { name, members, logo } = Astro.props;
+---
+
+<li>
+  <a href="#">
+    <img class="logo" src={logo} alt={name} />
+    <span class="name">{name}</span>
+    <span class="members">{members} members</span>
+  </a>
+</li>
+
+<style>
+  a {
+    display: grid;
+    grid-template-areas:
+      "logo name"
+      "logo members";
+    grid-template-columns: min-content 1fr;
+  }
+
+  .logo {
+    grid-area: logo;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .name {
+    grid-area: name;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .members {
+    grid-area: members;
+    color: #999;
+    font-weight: 300;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+</style>
